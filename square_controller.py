@@ -78,7 +78,7 @@ class SquareController:
                 return
             # Clamp to world bounds
             x = max(0, min(x, WORLD_W))
-            y = max(500, min(y, WORLD_H - 30))  # can't walk above ~500 (water/shore)
+            y = max(300, min(y, WORLD_H - 30))  # can't walk into water (top 300px)
             self.players[name]["tx"] = x
             self.players[name]["ty"] = y
             self.players[name]["last_seen"] = time.time()
